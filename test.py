@@ -2,9 +2,8 @@ import _thread
 import time
 
 # Define a function for the thread
-def print_time(threadName,delay):
+def print_time( threadName, delay):
    count = 0
-   print('Count:',str(count))
    while count < 5:
       time.sleep(delay)
       count += 1
@@ -12,8 +11,8 @@ def print_time(threadName,delay):
 
 # Create two threads as follows
 try:
-   _thread.start_new_thread(print_time("Thread-1",2))
-   _thread.start_new_thread(print_time("Thread-2",4))
+   _thread.start_new_thread( print_time, ("Thread-1", 2, ) )
+   _thread.start_new_thread( print_time, ("Thread-2", 4, ) )
 except:
    print ("Error: unable to start thread")
 
